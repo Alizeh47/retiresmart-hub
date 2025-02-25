@@ -30,6 +30,25 @@
   .btn-secondary {
     @apply bg-white text-primary hover:bg-beige-light;
   }
+
+  /* Services Section Components */
+  .service-image {
+    @apply grayscale-[0.3] contrast-110;
+    mix-blend-mode: multiply;
+  }
+
+  .dotted-path {
+    @apply stroke-current;
+    stroke-dasharray: 8,8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .arrow-head {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: none;
+  }
 }
 
 @layer utilities {
@@ -38,16 +57,39 @@
   }
 }
 
-/* Continuous scroll animation */
+/* Animations */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% - 4rem)); /* Adjust based on logo spacing */
+    transform: translateX(calc(-100% - 4rem));
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 48;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
 .animate-scroll {
   animation: scroll 30s linear infinite;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.path-animation {
+  stroke-dasharray: 8, 8;
+  animation: dashOffset 3s linear infinite;
 }

@@ -1,0 +1,19 @@
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.service-image {
+  filter: grayscale(0.3) contrast(1.1);
+  mix-blend-mode: multiply;
+}
+
+.dotted-path {
+  stroke-dasharray: 4,4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+} 
