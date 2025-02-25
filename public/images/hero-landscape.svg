@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="600" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="600" fill="#F5F1E8" opacity="0.5"/>
+  
+  <!-- Mountains -->
+  <path d="M0 300L200 150L400 250L600 100L800 200L1000 150L1200 250L1440 200V600H0V300Z" fill="#E5E0D5" opacity="0.6"/>
+  <path d="M0 350L200 200L400 300L600 150L800 250L1000 200L1200 300L1440 250V600H0V350Z" fill="#D1CCC1" opacity="0.4"/>
+  
+  <!-- Trees -->
+  <g transform="translate(100, 250)">
+    <path d="M0 0L20 -40L40 0H0Z" fill="#4A90E2" opacity="0.6"/>
+    <rect x="15" y="0" width="10" height="20" fill="#26A69A"/>
+  </g>
+  <g transform="translate(300, 200)">
+    <path d="M0 0L30 -60L60 0H0Z" fill="#4A90E2" opacity="0.6"/>
+    <rect x="25" y="0" width="10" height="30" fill="#26A69A"/>
+  </g>
+  <g transform="translate(700, 180)">
+    <path d="M0 0L25 -50L50 0H0Z" fill="#4A90E2" opacity="0.6"/>
+    <rect x="20" y="0" width="10" height="25" fill="#26A69A"/>
+  </g>
+  
+  <!-- Hot Air Balloon -->
+  <g transform="translate(1000, 150)">
+    <path d="M0 0C0 -55.23 44.77 -100 100 -100S200 -55.23 200 0L180 20H20L0 0Z" fill="#FFD1D6"/>
+    <path d="M90 20V60" stroke="#26A69A" stroke-width="4"/>
+    <rect x="80" y="60" width="40" height="30" fill="#26A69A"/>
+  </g>
+  
+  <!-- River -->
+  <path d="M0 400Q360 350 720 400T1440 400V600H0V400Z" fill="#4DB6AC" opacity="0.3"/>
+</svg> 

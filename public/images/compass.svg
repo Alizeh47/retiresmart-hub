@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Circle -->
+  <circle cx="60" cy="60" r="58" stroke="#1A365D" stroke-width="2" fill="none"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="60" cy="60" r="45" stroke="#1A365D" stroke-width="1" fill="none"/>
+  
+  <!-- Cardinal Points -->
+  <text x="60" y="20" text-anchor="middle" font-family="serif" font-size="12" fill="#1A365D">N</text>
+  <text x="60" y="105" text-anchor="middle" font-family="serif" font-size="12" fill="#1A365D">S</text>
+  <text x="105" y="65" text-anchor="middle" font-family="serif" font-size="12" fill="#1A365D">E</text>
+  <text x="15" y="65" text-anchor="middle" font-family="serif" font-size="12" fill="#1A365D">W</text>
+  
+  <!-- Compass Rose -->
+  <g transform="translate(60 60)">
+    <!-- North Arrow -->
+    <path d="M0 -35L5 0L0 5L-5 0Z" fill="#4DB6AC"/>
+    <!-- South Arrow -->
+    <path d="M0 35L-5 0L0 -5L5 0Z" fill="#1A365D"/>
+    <!-- East Arrow -->
+    <path d="M35 0L0 5L-5 0L0 -5Z" fill="#1A365D"/>
+    <!-- West Arrow -->
+    <path d="M-35 0L0 -5L5 0L0 5Z" fill="#1A365D"/>
+  </g>
+  
+  <!-- Decorative Lines -->
+  <g stroke="#1A365D" stroke-width="0.5">
+    <line x1="60" y1="25" x2="60" y2="35" />
+    <line x1="60" y1="85" x2="60" y2="95" />
+    <line x1="25" y1="60" x2="35" y2="60" />
+    <line x1="85" y1="60" x2="95" y2="60" />
+  </g>
+  
+  <!-- Center Point -->
+  <circle cx="60" cy="60" r="3" fill="#4DB6AC"/>
+</svg> 

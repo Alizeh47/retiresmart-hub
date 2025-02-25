@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- BBB Circle -->
+  <circle cx="24" cy="24" r="23" fill="#005A8C" stroke="#005A8C"/>
+  
+  <!-- BBB Text -->
+  <text x="24" y="32" 
+        text-anchor="middle" 
+        font-family="Arial Black" 
+        font-size="24" 
+        font-weight="900" 
+        fill="white">
+    BBB
+  </text>
+  
+  <!-- Accredited Business Text -->
+  <text x="24" y="16" 
+        text-anchor="middle" 
+        font-family="Arial" 
+        font-size="6" 
+        font-weight="bold" 
+        fill="white">
+    ACCREDITED
+  </text>
+  <text x="24" y="22" 
+        text-anchor="middle" 
+        font-family="Arial" 
+        font-size="6" 
+        font-weight="bold" 
+        fill="white">
+    BUSINESS
+  </text>
+</svg> 
