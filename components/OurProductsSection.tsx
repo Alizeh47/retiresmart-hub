@@ -58,11 +58,11 @@ export default function OurProductsSection() {
   const sectionId = useId();
   
   return (
-    <section className="py-16 relative overflow-hidden" id={sectionId}>
+    <section className="py-16 pb-24 relative overflow-hidden" id={sectionId}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Background with texture effect */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#E8F4F1] opacity-40"></div>
+          <div className="absolute inset-0 bg-[#E8F4F1] opacity-60"></div>
           
           {/* Hand-drawn decorative elements */}
           <svg className="absolute w-full h-full" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +122,7 @@ export default function OurProductsSection() {
             
             {/* Hand-drawn stars */}
             <path 
-              d="M300,200 L310,230 L340,230 L315,250 L325,280 L300,260 L275,280 L285,250 L260,230 L290,230 Z" 
+              d="M300,100 L310,130 L340,130 L315,150 L325,180 L300,160 L275,180 L285,150 L260,130 L290,130 Z" 
               fill="none" 
               stroke="#888" 
               strokeWidth="1"
@@ -155,7 +155,7 @@ export default function OurProductsSection() {
         </div>
         
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10 pb-16">
           {productCards.map((card) => (
             <div key={card.id} className="rounded-lg p-6 shadow-md relative overflow-hidden vintage-card">
               {/* Card background with subtle vintage paper texture */}
@@ -271,4 +271,4 @@ export default function OurProductsSection() {
       </svg>
     </section>
   );
-} 
+}

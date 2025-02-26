@@ -98,12 +98,12 @@ export default function ServicesSection() {
                     <div 
                       className="absolute w-20 h-20 float-animation"
                       style={{
-                        top: '20%',
+                        bottom: '25%',
                         [service.position === 'left' ? 'right' : 'left']: '18%'
                       }}
                     >
                       <Image
-                        src="/images/sky.png"
+                        src="/images/hot-air-balloon.png"
                         alt="Hot Air Balloon"
                         fill
                         className="object-contain"
