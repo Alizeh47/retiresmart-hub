@@ -5,6 +5,7 @@ import ServicesSection from '@/components/ServicesSection';
 import PoweredBySection from '@/components/PoweredBySection';
 import OurProductsSection from '@/components/OurProductsSection';
 import InsightsSection from '@/components/InsightsSection';
+import MissionSection from '@/components/MissionSection';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <PoweredBySection />
       <OurProductsSection/>
       <InsightsSection />
+      <MissionSection />
     </main>
   );
 }
