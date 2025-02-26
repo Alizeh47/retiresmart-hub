@@ -36,15 +36,6 @@ const partnerLogos = [
   { name: 'AOL', src: '/images/logos/aol.png' }
 ];
 
-// Fixed decorative elements with consistent positioning
-const decorativeElements = [
-  { id: 1, style: { left: '82%', top: '9%' }, delay: '0s' },
-  { id: 2, style: { left: '12%', top: '94%' }, delay: '0.5s' },
-  { id: 3, style: { left: '27%', top: '4%' }, delay: '1s' },
-  { id: 4, style: { left: '99%', top: '64%' }, delay: '1.5s' },
-  { id: 5, style: { left: '90%', top: '42%' }, delay: '2s' }
-];
-
 export default function PoweredBySection() {
   // Use a stable ID for server/client consistency
   const sectionId = useId();
@@ -53,7 +44,7 @@ export default function PoweredBySection() {
     <section className="py-16" id={sectionId}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero Section with Light Pink Background */}
-        <div className="bg-[#F9DAE2] rounded-lg overflow-hidden mb-16 relative shadow-md">
+        <div className="bg-[#F6DCD2] rounded-lg overflow-hidden mb-16 relative shadow-md">
           <div className="flex flex-col md:flex-row items-center p-8 md:p-12">
             {/* Hot Air Balloon Image with Hand-drawn Decorative Elements */}
             <div className="w-full md:w-1/3 relative mb-8 md:mb-0">
@@ -202,7 +193,7 @@ export default function PoweredBySection() {
       </div>
 
       {/* Add CSS for hand-drawn animation effect */}
-      <style jsx global>{`
+      <style jsx>{`
         .hand-drawn-element {
           opacity: 0.7;
           stroke-dasharray: 1000;

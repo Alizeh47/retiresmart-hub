@@ -1,0 +1,57 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="paper-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="1" result="noise" />
+      <feDiffuseLighting in="noise" lighting-color="#f8f5f0" surfaceScale="1" result="diffLight">
+        <feDistantLight azimuth="45" elevation="60" />
+      </feDiffuseLighting>
+      <feComposite operator="in" in="diffLight" in2="SourceGraphic" result="composite" />
+      <feBlend mode="multiply" in="composite" in2="SourceGraphic" result="blend" />
+      
+      <!-- Reduced stain intensity -->
+      <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="2" seed="2" result="spots" />
+      <feColorMatrix in="spots" type="matrix" values="0 0 0 0 0.6 0 0 0 0 0.4 0 0 0 0 0.2 0 0 0 0.05 0" result="coloredSpots" />
+      <feBlend mode="multiply" in="blend" in2="coloredSpots" result="stainedPaper" />
+      
+      <!-- Reduced edge darkening -->
+      <feGaussianBlur stdDeviation="15" in="SourceAlpha" result="blur" />
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0 0.1 0 0 0 0.2 0" result="edgeDarkening" />
+      <feComposite operator="in" in="edgeDarkening" in2="SourceGraphic" result="edgeComposite" />
+      <feBlend mode="multiply" in="stainedPaper" in2="edgeComposite" result="finalPaper" />
+    </filter>
+  </defs>
+  
+  <rect width="400" height="400" fill="#fcfaf5" filter="url(#paper-texture)" />
+  
+  <!-- Even more subtle lines -->
+  <g opacity="0.03">
+    <path d="M0,20 L400,20" stroke="#000" stroke-width="0.3" />
+    <path d="M0,60 L400,60" stroke="#000" stroke-width="0.3" />
+    <path d="M0,100 L400,100" stroke="#000" stroke-width="0.3" />
+    <path d="M0,140 L400,140" stroke="#000" stroke-width="0.3" />
+    <path d="M0,180 L400,180" stroke="#000" stroke-width="0.3" />
+    <path d="M0,220 L400,220" stroke="#000" stroke-width="0.3" />
+    <path d="M0,260 L400,260" stroke="#000" stroke-width="0.3" />
+    <path d="M0,300 L400,300" stroke="#000" stroke-width="0.3" />
+    <path d="M0,340 L400,340" stroke="#000" stroke-width="0.3" />
+    <path d="M0,380 L400,380" stroke="#000" stroke-width="0.3" />
+    
+    <path d="M20,0 L20,400" stroke="#000" stroke-width="0.3" />
+    <path d="M60,0 L60,400" stroke="#000" stroke-width="0.3" />
+    <path d="M100,0 L100,400" stroke="#000" stroke-width="0.3" />
+    <path d="M140,0 L140,400" stroke="#000" stroke-width="0.3" />
+    <path d="M180,0 L180,400" stroke="#000" stroke-width="0.3" />
+    <path d="M220,0 L220,400" stroke="#000" stroke-width="0.3" />
+    <path d="M260,0 L260,400" stroke="#000" stroke-width="0.3" />
+    <path d="M300,0 L300,400" stroke="#000" stroke-width="0.3" />
+    <path d="M340,0 L340,400" stroke="#000" stroke-width="0.3" />
+    <path d="M380,0 L380,400" stroke="#000" stroke-width="0.3" />
+  </g>
+  
+  <!-- More subtle stains -->
+  <g opacity="0.04">
+    <ellipse cx="50" cy="350" rx="30" ry="20" fill="#8B4513" />
+    <ellipse cx="350" cy="80" rx="25" ry="25" fill="#8B4513" />
+    <ellipse cx="200" cy="200" rx="15" ry="10" fill="#8B4513" />
+  </g>
+</svg> 
