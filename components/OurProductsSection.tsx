@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Aldrich, Roboto_Flex, Newsreader, Indie_Flower } from 'next/font/google';
+import { Aldrich, Roboto_Flex, Newsreader } from 'next/font/google';
 import { useId } from 'react';
 
 const aldrich = Aldrich({
@@ -20,36 +20,31 @@ const newsreaderItalic = Newsreader({
   subsets: ['latin'],
 });
 
-const indieFlower = Indie_Flower({
-  weight: '400',
-  subsets: ['latin'],
-});
-
 // Product cards data
 const productCards = [
   {
     id: 'income-planning',
     title: 'Income Planning',
     icon: '/images/icons/income-planning.svg',
-    description: 'Income planning looks different for everyone, potentially consisting of investments, Social Security, pensions, and annuities. People tend to have the most questions about annuities, so let\'s take a look at them for some clarity. Annuities are just a product. They are not a plan. So depending on your personal situation, an annuity may or may not be right for you. An annuity can replace an accumulation strategy or create guaranteed growth, and it can even create private pension-like income. But does it make sense for you?',
+    description: "Income planning looks different for everyone, potentially consisting of investments, Social Security, pensions, and annuities. People tend to have the most questions about annuities, so let&apos;s take a look at them for some clarity. Annuities are just a product. They are not a plan. So depending on your personal situation, an annuity may or may not be right for you. An annuity can replace an accumulation strategy or create guaranteed growth, and it can even create private pension-like income. But does it make sense for you?",
   },
   {
     id: 'legacy-planning',
     title: 'Legacy Planning',
     icon: '/images/icons/legacy-planning.svg',
-    description: 'Leaving a legacy means a lot of different things. Whether you\'re someone who wants to leave a financial legacy or someone who wants to live your financial legacy, there are different strategies and products to help you accomplish that. One of the best ways to achieve either result is life insurance. If you\'re waiting until you die to utilize life insurance, you might be doing it wrong. After all, it\'s called life insurance—not death insurance. But there are a lot of options out there. So which policy can help you the most in retirement? Well, this depends on your strategy. Although most people buy life insurance for its death benefit, there are a myriad of ways to utilize it while you\'re alive.',
+    description: "Leaving a legacy means a lot of different things. Whether you&apos;re someone who wants to leave a financial legacy or someone who wants to live your financial legacy, there are different strategies and products to help you accomplish that. One of the best ways to achieve either result is life insurance. If you&apos;re waiting until you die to utilize life insurance, you might be doing it wrong. After all, it&apos;s called life insurance—not death insurance. But there are a lot of options out there. So which policy can help you the most in retirement? Well, this depends on your strategy. Although most people buy life insurance for its death benefit, there are a myriad of ways to utilize it while you&apos;re alive.",
   },
   {
     id: 'assets-under-management',
     title: 'Assets Under Management',
     icon: '/images/icons/assets-management.svg',
-    description: 'Imagine you hire somebody to do a job for you. If they do the job well, you\'re happy to pay them. But what if they don\'t do the job at all? Is it still worth the money? This is how we feel about assets under management with a traditional advisor. The market goes up and you pay your fee. The market goes down, you lose money...and you still pay your fee. We think you can do better.',
+    description: "Imagine you hire somebody to do a job for you. If they do the job well, you&apos;re happy to pay them. But what if they don&apos;t do the job at all? Is it still worth the money? This is how we feel about assets under management with a traditional advisor. The market goes up and you pay your fee. The market goes down, you lose money...and you still pay your fee. We think you can do better.",
   },
   {
     id: 'medicare-long-term-care',
     title: 'Medicare/Long Term Care',
     icon: '/images/icons/medicare-care.svg',
-    description: 'Sure, you have Medicare and savings. But do you have a plan for your long-term care? Spoiler Alert: having kids isn\'t a plan...at least not a good one.',
+    description: "Sure, you have Medicare and savings. But do you have a plan for your long-term care? Spoiler Alert: having kids isn&apos;t a plan...at least not a good one.",
   }
 ];
 
@@ -144,12 +139,12 @@ export default function OurProductsSection() {
             Our Products
           </h2>
           <h3 className={`${aldrich.className} text-5xl font-bold text-primary leading-tight`}>
-            It's ok to stop and<br />
+            It&apos;s ok to stop and<br />
             ask for directions.
           </h3>
           <div className="max-w-3xl mt-8">
             <p className={`${robotoFlex.className} text-lg text-primary-light`}>
-              Don't confuse a portfolio with an actual plan. A few vague directions from an advisor just won't cut it. What you need is a true financial guide—someone who's traveled this road many times and knows the best routes to success. There is no simple path to this destination. That's why we'll travel by your side the whole way, making sure that all roads lead to the retirement you imagine.
+              Don&apos;t confuse a portfolio with an actual plan. A few vague directions from an advisor just won&apos;t cut it. What you need is a true financial guide—someone who&apos;s traveled this road many times and knows the best routes to success. There is no simple path to this destination. That&apos;s why we&apos;ll travel by your side the whole way, making sure that all roads lead to the retirement you imagine.
             </p>
           </div>
         </div>

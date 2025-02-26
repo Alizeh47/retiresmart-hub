@@ -98,11 +98,11 @@ export default function InsightsSection() {
             INSIGHTS
           </h1>
           <p className={`${robotoFlex.className} text-lg text-gray-600 max-w-3xl mx-auto mb-4`}>
-            Let's focus on things we can control—taxes, fees, and risk— and
-            stop chasing the things we can't.
+            Let&apos;s focus on things we can control—taxes, fees, and risk— and
+            stop chasing the things we can&apos;t.
           </p>
           <p className={`${newsreaderItalic.className} text-xl text-gray-500 max-w-2xl mx-auto`}>
-            "The best investment you can make is in yourself. The more you learn, the more you'll earn."
+            &quot;The best investment you can make is in yourself. The more you learn, the more you&apos;ll earn.&quot;
           </p>
         </div>
 

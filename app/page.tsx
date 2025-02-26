@@ -6,6 +6,7 @@ import PoweredBySection from '@/components/PoweredBySection';
 import OurProductsSection from '@/components/OurProductsSection';
 import InsightsSection from '@/components/InsightsSection';
 import MissionSection from '@/components/MissionSection';
+import QuestionJarSection from '@/components/QuestionJarSection';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <OurProductsSection/>
       <InsightsSection />
       <MissionSection />
+      <QuestionJarSection />
     </main>
   );
 }

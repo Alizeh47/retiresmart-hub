@@ -9,8 +9,9 @@ const playfair = Playfair_Display({
 });
 
 const newsreader = Newsreader({
-  weight: '400',
+  weight: '300',
   subsets: ['latin'],
+  style: 'italic'
 });
 
 const companyLogos = [
@@ -63,13 +64,19 @@ export default function HeroSection() {
 
       {/* Animated Stars Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(5)].map((_, i) => (
+        {[
+          { left: "64.32%", top: "5.20%" },
+          { left: "97.01%", top: "28.13%" },
+          { left: "29.97%", top: "42.33%" },
+          { left: "92.11%", top: "99.93%" },
+          { left: "67.15%", top: "58.72%" }
+        ].map((position, i) => (
           <div
             key={i}
             className={`absolute w-2 h-2 bg-[#4A5568] rounded-full animate-twinkle-${i}`}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: position.left,
+              top: position.top,
               animationDelay: `${i * 0.5}s`
             }}
           />
@@ -79,70 +86,61 @@ export default function HeroSection() {
       <div className="absolute inset-0 flex flex-col items-center pt-16">
         <div className="text-center max-w-4xl px-4 translate-x-8">
           <h1 className={`${playfair.className} relative`}>
-            {/* Abstract Hand-drawn Decorative Elements */}
-            <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-16 h-16">
-              <svg className="w-full h-full text-[#4A5568] opacity-80 animate-float-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                {/* Abstract Star */}
-                <path d="M12 2L9 9L2 12L9 15L12 22L15 15L22 12L15 9L12 2Z">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="3s" begin="0s" fill="freeze" />
-                </path>
-                <path d="M12 2L15 9M12 2L9 9M9 9L2 12M2 12L9 15M9 15L12 22M12 22L15 15M15 15L22 12M22 12L15 9">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="3s" begin="0.5s" fill="freeze" />
-                </path>
-              </svg>
+            {/* Hot Air Balloons */}
+            <div className="absolute -left-32 top-0 w-24 h-24">
+              <Image
+                src="/images/hot-air-balloon.png"
+                alt="Hot Air Balloon"
+                width={96}
+                height={96}
+                className="w-full h-full object-contain animate-float-slow"
+              />
             </div>
 
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-16 h-16">
-              <svg className="w-full h-full text-[#4A5568] opacity-80 animate-float-delay" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                {/* Lightning Bolt */}
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="3s" begin="0s" fill="freeze" />
-                </path>
-                <path d="M13 2L12 10M3 14L12 10M12 10L11 22M11 22L12 14M21 10L12 14">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="3s" begin="0.5s" fill="freeze" />
-                </path>
-              </svg>
+            <div className="absolute -right-28 top-16 w-16 h-16">
+              <Image
+                src="/images/hot-air-balloon.png"
+                alt="Hot Air Balloon"
+                width={64}
+                height={64}
+                className="w-full h-full object-contain animate-float-delay"
+              />
             </div>
 
-            {/* Small Abstract Elements */}
-            <div className="absolute -left-12 top-0 w-8 h-8">
-              <svg className="w-full h-full text-[#4A5568] opacity-60 animate-spin-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2L14 8L20 10L14 12L12 18L10 12L4 10L10 8L12 2Z">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="2s" begin="0s" fill="freeze" />
-                </path>
-              </svg>
+            <div className="absolute left-1/4 -top-8 w-12 h-12">
+              <Image
+                src="/images/hot-air-balloon.png"
+                alt="Hot Air Balloon"
+                width={48}
+                height={48}
+                className="w-full h-full object-contain animate-float"
+              />
             </div>
 
-            <div className="absolute -right-10 bottom-0 w-6 h-6">
-              <svg className="w-full h-full text-[#4A5568] opacity-60 animate-float" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="2s" begin="0.3s" fill="freeze" />
-                </path>
-              </svg>
+            <div className="absolute right-1/4 top-0 w-10 h-10">
+              <Image
+                src="/images/hot-air-balloon.png"
+                alt="Hot Air Balloon"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain animate-float-slow"
+              />
             </div>
             
-            <span className="block text-[72px] leading-none font-bold text-[#FED44B] animate-fade-in-up relative">
+            <span className="block text-[72px] leading-none font-bold text-[#4A3419] animate-fade-in-up relative">
               A retirement roadmap
-              {/* Sketchy Star */}
-              <svg className="absolute -right-8 top-0 w-8 h-8 text-[#4A5568] opacity-70 animate-float" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L13.5 9H21L15 13.5L17 21L12 16L7 21L9 13.5L3 9H10.5L12 2Z">
-                  <animate attributeName="strokeDasharray" from="0,100" to="100,100" dur="2s" begin="0s" fill="freeze" />
-                </path>
-              </svg>
             </span>
-            <span className="block text-[56px] text-[#0D1D3C] -mt-3 animate-fade-in-up-delay">
+            <span className="block text-[56px] text-[#2C1810] -mt-3 animate-fade-in-up-delay">
               for everyone.
             </span>
           </h1>
-          <p className={`mx-auto mt-4 max-w-2xl text-2xl text-[#FED44B] ${newsreader.className} animate-fade-in-up-delay-2 relative`}>
-            <span className="absolute -left-8 top-1/2 -translate-y-1/2 text-xl text-[#4A5568] animate-pulse">→</span>
+          <p className={`mx-auto mt-4 max-w-2xl text-2xl text-[#3B2317] ${newsreader.className} animate-fade-in-up-delay-2 relative`}>
             Retirement is a journey. Take it with confidence.
-            <span className="absolute -right-8 top-1/2 -translate-y-1/2 text-xl text-[#4A5568] animate-pulse">←</span>
           </p>
           <div className="mt-8 animate-fade-in-up-delay-3">
             <Link
               href="/schedule"
-              className="group relative inline-flex items-center rounded-md bg-teal px-8 py-5 text-sm font-medium text-white shadow-button hover:bg-teal-dark transition-all duration-200 overflow-hidden"
+              className="group relative inline-flex items-center rounded-md bg-teal px-8 py-3 text-sm font-medium text-white shadow-button hover:bg-teal-dark transition-all duration-200 overflow-hidden"
             >
               {/* Geometric Background Shapes */}
               <div className="absolute inset-0 w-full h-full">

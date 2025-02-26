@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Playfair_Display, Inter } from 'next/font/google';
 
 const playfair = Playfair_Display({ subsets: ['latin'] });

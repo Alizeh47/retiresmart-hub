@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import { Indie_Flower } from 'next/font/google';
 
@@ -9,21 +8,13 @@ const indieFlower = Indie_Flower({
   subsets: ['latin'],
 });
 
-// Fixed positions for decorative elements
-const decorativeElements = [
-  { id: 1, style: { left: '64%', top: '46%', animationDelay: '0s' } },
-  { id: 2, style: { left: '13%', top: '43%', animationDelay: '0.5s' } },
-  { id: 3, style: { left: '6%', top: '33%', animationDelay: '1s' } },
-  { id: 4, style: { left: '26%', top: '83%', animationDelay: '1.5s' } },
-  { id: 5, style: { left: '83%', top: '31%', animationDelay: '2s' } }
-];
-
 export default function GetDirectionsSection() {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
-    <section className="bg-white py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 bg-white overflow-hidden">
+      <div className="container mx-auto px-4">
+        <p className="text-center text-gray-600 mb-12">
+          Let&apos;s create your personalized retirement roadmap together. Here&apos;s how we&apos;ll guide you through the journey.
+        </p>
         {/* Compass Image */}
         <div className="flex justify-center mb-10">
           <div className="relative w-64 h-48">
