@@ -58,38 +58,351 @@
 }
 
 /* Animations */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% - 4rem));
-  }
+@keyframes glow {
+  0%, 100% { opacity: 0.7; filter: drop-shadow(0 0 2px rgba(64, 207, 164, 0.5)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(64, 207, 164, 0.8)); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
 
-@keyframes dashOffset {
-  0% {
-    stroke-dashoffset: 48;
-  }
-  100% {
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+@keyframes pulse-medium {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.1); }
+}
+
+@keyframes draw {
+  to {
     stroke-dashoffset: 0;
   }
 }
 
-.animate-scroll {
-  animation: scroll 30s linear infinite;
+@keyframes draw-path {
+  0% { stroke-dasharray: 200; stroke-dashoffset: 200; }
+  100% { stroke-dasharray: 200; stroke-dashoffset: 0; }
 }
 
-.float-animation {
-  animation: float 6s ease-in-out infinite;
+@keyframes draw-path-delay {
+  0%, 50% { stroke-dasharray: 50; stroke-dashoffset: 50; }
+  100% { stroke-dasharray: 50; stroke-dashoffset: 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+.animate-pulse-medium {
+  animation: pulse-medium 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+.animate-draw-path {
+  animation: draw-path 2s ease-in-out forwards;
+}
+
+.animate-draw-path-delay {
+  animation: draw-path-delay 2s ease-in-out forwards;
+}
+
+/* Decorative Elements */
+.decorative-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.line-1 {
+  animation: drawLine 2s ease-out forwards;
+}
+
+.line-2 {
+  animation: drawLine 2s ease-out 0.5s forwards;
+}
+
+.decorative-dot {
+  position: absolute;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.dot-1 {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.dot-2 {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.dot-3 {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .path-animation {
-  stroke-dasharray: 8, 8;
-  animation: dashOffset 3s linear infinite;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw 3s ease-in-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+.filter-teal {
+  filter: invert(67%) sepia(40%) saturate(592%) hue-rotate(116deg) brightness(92%) contrast(88%);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .decorative-line,
+  .decorative-dot {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: none;
+  }
+}
+
+/* Animation styles for all pages */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wave {
+  0%, 100% { d: path("M0,200 Q400,100 800,200 T1200,200"); }
+  50% { d: path("M0,200 Q400,300 800,200 T1200,200"); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 15s ease-in-out infinite;
+}
+
+.dollar-signs text {
+  font-family: system-ui;
+}
+
+/* Investment Planning Page Animations */
+.chart-line {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: drawLine 3s ease-out forwards;
+}
+
+.chart-line-dashed {
+  stroke-dasharray: 5, 5;
+  animation: drawLineDashed 3s ease-out 0.5s forwards;
+}
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(64, 166, 159, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 166, 159, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLineDashed {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-15px) translateX(15px); }
+  50% { transform: translateY(0) translateX(30px); }
+  75% { transform: translateY(15px) translateX(15px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-25px) translateX(-15px); }
+  50% { transform: translateY(0) translateX(-30px); }
+  75% { transform: translateY(25px) translateX(-15px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(20px) translateX(20px); }
+  50% { transform: translateY(0) translateX(40px); }
+  75% { transform: translateY(-20px) translateX(20px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 10s ease-in-out infinite;
+}
+
+/* Estate Planning Page Styles */
+.bg-pattern {
+  background-image: radial-gradient(#40A69F 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.decorative-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 3s ease-out forwards;
+}
+
+/* Medicare/LTC Page Styles */
+.pattern-background {
+  background-image: radial-gradient(#40A69F 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+@keyframes pulse-medium {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.1); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite ease-in-out;
+}
+
+.animate-pulse-medium {
+  animation: pulse-medium 6s infinite ease-in-out;
+}
+
+/* Claw Machine Game Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-8px) rotate(-5deg);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 3s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 2.5s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Chart line animation */
+.chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-line 3s ease-in-out forwards;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

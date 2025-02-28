@@ -126,16 +126,18 @@ export default function ServicesSection() {
                     <span className="mr-2">Learn more</span>
                     <svg width="40" height="24">
                       <path
-                        d="M2 12c0 0 20-2 30 0"
+                        d="M2 12c0 0 18-2 28 0"
                         stroke="currentColor"
                         fill="none"
-                        className="dotted-path"
+                        className="pencil-path"
+                        strokeLinecap="round"
                       />
                       <path
-                        d="M28 4c0 0 4 4 4 8s-4 8-4 8"
+                        d="M28 4c0 0 3 4 3 8s-3 8-3 8"
                         stroke="currentColor"
                         fill="none"
-                        className="dotted-path"
+                        className="pencil-path"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </button>
@@ -148,19 +150,21 @@ export default function ServicesSection() {
                   {service.position === 'left' && services[index + 1].position === 'right' ? (
                     <svg width="100%" height="100%" className="absolute top-0 left-0 overflow-visible" preserveAspectRatio="none">
                       <path
-                        d="M300,10 C400,50 350,100 450,130 S550,150 700,180"
+                        d="M300,10 C350,40 380,70 420,90 C460,110 500,120 550,130 C600,140 650,150 700,180"
                         stroke="currentColor"
                         fill="none"
                         strokeWidth="2"
-                        className="text-primary-light dotted-path path-animation"
+                        className="text-primary-light pencil-path"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       {/* Hand-drawn arrow head */}
                       <path
-                        d="M700,180 L685,165 L690,178 L675,170"
+                        d="M700,180 L685,165 M690,178 L675,170 M695,175 L680,160"
                         stroke="currentColor"
                         fill="none"
                         strokeWidth="2"
-                        className="text-primary-light arrow-head"
+                        className="text-primary-light pencil-path"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -168,19 +172,21 @@ export default function ServicesSection() {
                   ) : service.position === 'right' && services[index + 1].position === 'left' ? (
                     <svg width="100%" height="100%" className="absolute top-0 left-0 overflow-visible" preserveAspectRatio="none">
                       <path
-                        d="M700,10 C600,50 650,100 550,130 S450,150 300,180"
+                        d="M700,10 C650,40 620,70 580,90 C540,110 500,120 450,130 C400,140 350,150 300,180"
                         stroke="currentColor"
                         fill="none"
                         strokeWidth="2"
-                        className="text-primary-light dotted-path path-animation"
+                        className="text-primary-light pencil-path"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       {/* Hand-drawn arrow head */}
                       <path
-                        d="M300,180 L315,165 L310,178 L325,170"
+                        d="M300,180 L315,165 M310,178 L325,170 M305,175 L320,160"
                         stroke="currentColor"
                         fill="none"
                         strokeWidth="2"
-                        className="text-primary-light arrow-head"
+                        className="text-primary-light pencil-path"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -188,19 +194,21 @@ export default function ServicesSection() {
                   ) : (
                     <svg width="100%" height="100%" className="absolute top-0 left-0 overflow-visible" preserveAspectRatio="none">
                       <path
-                        d="M600,10 C500,50 700,100 500,150 S700,170 600,180"
+                        d="M600,10 C550,30 500,60 520,90 C540,120 600,130 580,150 C560,170 520,160 600,180"
                         stroke="currentColor"
                         fill="none"
                         strokeWidth="2"
-                        className="text-primary-light dotted-path path-animation"
+                        className="text-primary-light pencil-path"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       {/* Hand-drawn arrow head */}
                       <path
-                        d="M600,180 L590,165 L605,170 L585,160"
+                        d="M600,180 L590,165 M605,170 L585,160 M595,175 L580,155"
                         stroke="currentColor"
                         fill="none"
                         strokeWidth="2"
-                        className="text-primary-light arrow-head"
+                        className="text-primary-light pencil-path"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -212,6 +220,33 @@ export default function ServicesSection() {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .float-animation {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+        
+        .pencil-path {
+          stroke-dasharray: 5, 3;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          animation: draw-pencil 2s linear forwards;
+        }
+        
+        @keyframes draw-pencil {
+          from {
+            stroke-dashoffset: 500;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 } 

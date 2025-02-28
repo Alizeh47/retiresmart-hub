@@ -1,0 +1,32 @@
+.insights-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.decorative-dot {
+  position: absolute;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.dot-1 {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.dot-2 {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.dot-3 {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+} 

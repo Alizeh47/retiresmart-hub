@@ -47,7 +47,7 @@ const companyLogos = [
 
 export default function HeroSection() {
   return (
-    <div className="relative overflow-hidden">
+    <section className="relative h-screen min-h-[600px] bg-beige overflow-hidden">
       {/* Hero Illustration */}
       <div className="relative h-[600px] w-full bg-beige">
         <Image
@@ -103,7 +103,7 @@ export default function HeroSection() {
                 alt="Hot Air Balloon"
                 width={64}
                 height={64}
-                className="w-full h-full object-contain animate-float-delay"
+                className="w-full h-full object-contain animate-float-medium"
               />
             </div>
 
@@ -113,7 +113,7 @@ export default function HeroSection() {
                 alt="Hot Air Balloon"
                 width={48}
                 height={48}
-                className="w-full h-full object-contain animate-float"
+                className="w-full h-full object-contain animate-float-fast"
               />
             </div>
 
@@ -197,134 +197,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        
-        @keyframes spin-slow-reverse {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-        
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.2; transform: scale(0.8); }
-          50% { opacity: 0.8; transform: scale(1.2); }
-        }
-
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0) rotate(0); }
-          50% { transform: translateY(-10px) rotate(5deg); }
-        }
-
-        @keyframes float-delay {
-          0%, 100% { transform: translateY(0) rotate(0); }
-          50% { transform: translateY(10px) rotate(-5deg); }
-        }
-
-        ${[...Array(5)].map((_, i) => `
-          .animate-twinkle-${i} {
-            animation: twinkle 3s ease-in-out ${i * 0.5}s infinite;
-          }
-        `).join('\n')}
-
-        .animate-float-slow {
-          animation: float-slow 6s ease-in-out infinite;
-        }
-
-        .animate-float-delay {
-          animation: float-delay 8s ease-in-out infinite;
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
-        }
-        
-        .animate-spin-slow-reverse {
-          animation: spin-slow 12s linear infinite reverse;
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-        }
-        
-        .animate-fade-in-up-delay {
-          animation: fade-in-up 0.6s ease-out 0.2s forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in-up-delay-2 {
-          animation: fade-in-up 0.6s ease-out 0.4s forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in-up-delay-3 {
-          animation: fade-in-up 0.6s ease-out 0.6s forwards;
-          opacity: 0;
-        }
-        
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-        
-        .animate-bounce-x {
-          animation: bounce-x 1s ease-in-out infinite;
-        }
-        
-        .animate-pulse {
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        /* Updated button animations */
-        @keyframes geometric-float {
-          0%, 100% { transform: rotate(45deg) scale(1); }
-          50% { transform: rotate(45deg) scale(1.1); }
-        }
-
-        @keyframes circle-pulse {
-          0%, 100% { transform: scale(1); opacity: 0.15; }
-          50% { transform: scale(1.2); opacity: 0.25; }
-        }
-
-        /* Add these to your existing styles */
-        .group:hover .rotate-45 {
-          animation: geometric-float 3s ease-in-out infinite;
-        }
-
-        .group:hover .rounded-full {
-          animation: circle-pulse 3s ease-in-out infinite;
-        }
-
-        .group:hover .bg-[#4A5568]/20,
-        .group:hover .bg-[#4A5568]/30 {
-          animation: geometric-float 4s ease-in-out infinite;
-        }
-
-        @keyframes draw {
-          to {
-            stroke-dashoffset: 0;
-          }
-        }
-
-        path {
-          stroke-dasharray: 1000;
-          stroke-dashoffset: 1000;
-          animation: draw 2s ease-in-out forwards;
-        }
-      `}</style>
-    </div>
+    </section>
   );
 } 

@@ -140,124 +140,46 @@ export default function QuestionJarSection() {
       {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg className="absolute w-full h-full" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-          {/* Decorative Groups */}
-          <g className="decorative-lines">
-            <path
-              className="decorative-line line-1"
-              d="M100,50 C200,100 300,50 400,100"
-              stroke="#E8F4F1"
-              strokeWidth="2"
-              fill="none"
-            />
-            <path
-              className="decorative-line line-2"
-              d="M800,700 C900,650 1000,700 1100,650"
-              stroke="#E8F4F1"
-              strokeWidth="2"
-              fill="none"
-            />
-          </g>
+          {/* Decorative Lines */}
+          <path
+            d="M100,50 C200,100 300,50 400,100"
+            stroke="#E8F4F1"
+            strokeWidth="2"
+            fill="none"
+            className="path-animation delay-1"
+          />
+          <path
+            d="M800,700 C900,650 1000,700 1100,650"
+            stroke="#E8F4F1"
+            strokeWidth="2"
+            fill="none"
+            className="path-animation delay-2"
+          />
 
-          <g className="decorative-dots">
-            <circle 
-              cx="392" 
-              cy="89" 
-              r="4" 
-              className="decorative-dot dot-1" 
-              fill="#40A69F"
-              style={{ 
-                left: "69.5129%",
-                top: "30.7119%",
-                animationDelay: "0s"
-              }}
-            />
-            <circle 
-              cx="778" 
-              cy="292" 
-              r="4" 
-              className="decorative-dot dot-2" 
-              fill="#40A69F"
-              style={{ 
-                left: "28.927%",
-                top: "17.0627%",
-                animationDelay: "0.5s"
-              }}
-            />
-            <circle 
-              cx="79" 
-              cy="612" 
-              r="4" 
-              className="decorative-dot dot-3" 
-              fill="#40A69F"
-              style={{ 
-                left: "90.3406%",
-                top: "87.4093%",
-                animationDelay: "1s"
-              }}
-            />
-          </g>
+          {/* Decorative Dots */}
+          <circle 
+            cx="392" 
+            cy="89" 
+            r="4" 
+            fill="#40A69F"
+            className="animate-pulse-slow"
+          />
+          <circle 
+            cx="778" 
+            cy="292" 
+            r="4" 
+            fill="#40A69F"
+            className="animate-pulse-medium"
+          />
+          <circle 
+            cx="79" 
+            cy="612" 
+            r="4" 
+            fill="#40A69F"
+            className="animate-pulse-slow"
+          />
         </svg>
       </div>
-
-      <style jsx>{`
-        .decorative-line {
-          stroke-dasharray: 1000;
-          stroke-dashoffset: 1000;
-        }
-
-        .line-1 {
-          animation: drawLine 2s ease-out forwards;
-        }
-
-        .line-2 {
-          animation: drawLine 2s ease-out 0.5s forwards;
-        }
-
-        .decorative-dot {
-          position: absolute;
-          opacity: 0;
-          transform-origin: center;
-        }
-
-        .dot-1 {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        .dot-2 {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        .dot-3 {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: scale(0);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes drawLine {
-          to {
-            stroke-dashoffset: 0;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .decorative-line,
-          .decorative-dot {
-            animation: none;
-            opacity: 1;
-            stroke-dashoffset: 0;
-            transform: none;
-          }
-        }
-      `}</style>
     </section>
   );
 } 

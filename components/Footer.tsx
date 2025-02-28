@@ -5,29 +5,33 @@ import Link from 'next/link';
 
 const navigation = {
   services: [
-    { name: 'Income Planning', href: '/services/income-planning' },
-    { name: 'Tax Planning', href: '/services/tax-planning' },
-    { name: 'Investment Planning', href: '/services/investment-planning' },
-    { name: 'Medicare/LTC', href: '/services/medicare-ltc' },
-    { name: 'Estate Planning', href: '/services/estate-planning' },
+    { name: 'Income Planning', href: '/income-planning' },
+    { name: 'Tax Planning', href: '/tax-planning' },
+    { name: 'Investment Planning', href: '/investment-planning' },
+    { name: 'Medicare/LTC', href: '/medicare-ltc' },
+    { name: 'Estate Planning', href: '/estate-planning' },
   ],
   products: [
     { name: 'My Guide', href: '/guide' },
     { name: 'Log in', href: '/login' },
-    { name: 'Upload Files Securely', href: '/upload' },
-    { name: 'Claw Machine Game', href: '/game' },
+    { name: 'Sign up', href: '/signup' },
+    { name: 'Upload Files Securely', href: '/upload-files' },
+    { name: 'Claw Machine Game', href: '/claw-machine' },
+    { name: 'Virtual Office', href: '/virtual-office' },
   ],
   education: [
     { name: 'Blog', href: '/blog' },
     { name: 'Resources', href: '/resources' },
     { name: 'Videos', href: '/videos' },
     { name: 'Workshops', href: '/workshops' },
+    { name: 'Retirement Quiz', href: '/retirement-quiz' },
   ],
   about: [
     { name: 'Our Story', href: '/about' },
     { name: 'Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Schedule', href: '/schedule' },
   ],
 };
 
